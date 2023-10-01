@@ -1,0 +1,825 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>テキストの表示サンプル</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+body {
+    font-family: Noto Sans JP;
+    color:#222;
+    padding: 0;
+    margin-left: 80px;
+   
+}
+p {
+    padding-bottom: 32px;}
+
+h1 {
+    /* margin:0 auto; */
+    padding-bottom: 40px;
+}
+h3 {
+    /* margin:0 auto; */
+    padding-bottom: 24px;
+}
+.paragraph-width-1 {
+    max-width:832px;
+    /* margin:0 auto */;
+}
+.paragraph-width-2 {
+    max-width:544px;
+    /* margin:0 auto; */
+}
+.paragraph-width-3 {
+    max-width:352px;
+   /*  margin:0 auto; */
+}
+
+/*Line-height 150%*/
+
+.font16-150-400 { 
+font-size: 16px;
+font-style: normal;
+font-weight: 400;
+line-height: 150%; /* 28px */
+letter-spacing: 0.64px;
+}
+.font17-150-400 { 
+font-size: 17px;
+font-style: normal;
+font-weight: 400;
+line-height: 150%; /* 28px */
+letter-spacing: 0.64px;
+}
+.font18-150-400 { 
+font-size: 18px;
+font-style: normal;
+font-weight: 400;
+line-height: 2150%4px; /* 28px */
+letter-spacing: 0.64px;
+}
+/*Line-height 175%*/
+.font16-175-400 { 
+font-size: 16px;
+font-style: normal;
+font-weight: 400;
+line-height: 175%; /* 28px */
+letter-spacing: 0.64px;
+}
+.font17-175-400 { 
+font-size: 17px;
+font-style: normal;
+font-weight: 400;
+line-height: 175%; /* 28px */
+letter-spacing: 0.64px;
+}
+.font18-175-400 { 
+font-size: 18px;
+font-style: normal;
+font-weight: 400;
+line-height: 175%; /* 28px */
+letter-spacing: 0.64px;
+}
+/*Line-height 200%*/
+.font16-200-400 { 
+font-size: 16px;
+font-style: normal;
+font-weight: 400;
+line-height: 200%; /* 28px */
+letter-spacing: 0.64px;
+}
+.font17-200-400 { 
+font-size: 17px;
+font-style: normal;
+font-weight: 400;
+line-height: 200%; /* 28px */
+letter-spacing: 0.64px;
+}
+.font18-200-400 { 
+font-size: 18px;
+font-style: normal;
+font-weight: 400;
+line-height: 200%; /* 28px */
+letter-spacing: 0.64px;
+}
+/*Weight 500%*/
+.font16-150-500 { 
+font-size: 16px;
+font-style: normal;
+font-weight: 500;
+line-height: 150%; /* 28px */
+letter-spacing: 0.64px;
+}
+.font17-150-500 { 
+font-size: 17px;
+font-style: normal;
+font-weight: 500;
+line-height: 150%; /* 28px */
+letter-spacing: 0.64px;
+}
+.font18-150-500 { 
+font-size: 18px;
+font-style: normal;
+font-weight: 500;
+line-height: 150%;
+letter-spacing: 0.64px;
+}
+
+/* Weight 500% and Line-height 175% */
+
+.font16-175-500 { 
+font-size: 16px;
+font-style: normal;
+font-weight: 500;
+line-height: 175%; /* 28px */
+letter-spacing: 0.64px;
+}
+.font17-175-500 { 
+font-size: 17px;
+font-style: normal;
+font-weight: 500;
+line-height: 175%; 
+letter-spacing: 0.64px;
+}
+.font18-175-500 { 
+font-size: 18px;
+font-style: normal;
+font-weight: 500;
+line-height: 175%;
+letter-spacing: 0.64px;
+}
+/* Weight 500% and Line-height 200% */
+
+.font16-200-500 { 
+font-size: 16px;
+font-style: normal;
+font-weight: 500;
+line-height: 200%; /* 28px */
+letter-spacing: 0.64px;
+}
+.font17-200-500 { 
+font-size: 17px;
+font-style: normal;
+font-weight: 500;
+line-height: 200%; 
+letter-spacing: 0.64px;
+}
+.font18-200-500 { 
+font-size: 18px;
+font-style: normal;
+font-weight: 500;
+line-height: 200%;
+letter-spacing: 0.64px;
+}
+
+/* 3 columns layout starts here */
+
+.item-list {
+display: inline-flex;
+align-items: flex-start;
+gap: 32px;
+padding-bottom: 64px;
+ /*  justify-content: space-between;  */
+}
+.item-list .item {
+    width: 352px; 
+}
+.item-list .item .title-18-700{
+  padding: 0px;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 150%;
+}
+.item-list .item .description-16-150-400{
+  margin: 16px 0 0;
+  padding: 0px;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 150%;
+}
+.item-list .item .description-16-175-400{
+  margin: 16px 0 0;
+  padding: 0px;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 175%;
+}
+.item-list .item .description-16-200-400{
+  margin: 16px 0 0;
+  padding: 0px;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 200%;
+}
+.item-list .item .description-17-150-400{
+  margin: 16px 0 0;
+  padding: 0px;
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 150%;
+}
+.item-list .item .description-17-175-400{
+  margin: 16px 0 0;
+  padding: 0px;
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 175%;
+}
+.item-list .item .description-17-200-400{
+  margin: 16px 0 0;
+  padding: 0px;
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 200%;
+}
+
+
+
+</style>
+</head>
+<body>
+ <h1>タイポグラフィ検証用</h1>
+<div class="paragraph-width-1">
+    <h3>サイズ16px, 行間150%(24px) 太さ400 (Regular)</h3>
+  <p  class="font16-150-400">こちらのテキストは、CSSで横幅を最大600pxに指定しています。横幅はmax-width: 600px;で指定しています。横幅が600pxよりも小さい場合、ブラウザがその幅に応じて文字を折り返してくれます。あとはmargin:0 auto;を使って、左右のマージンを自動にしてます。これで、記事が真ん中に表示されるようになります。</p>
+</div>
+<div class="paragraph-width-1">
+    <h3>サイズ17px, 行間150%(25.5px) 太さ400 (Regular)</h3>
+    <p class="font17-150-400">こちらのテキストは、CSSで横幅を最大600pxに指定しています。横幅はmax-width:
+        600px;で指定しています。横幅が600pxよりも小さい場合、ブラウザがその幅に応じて文字を折り返してくれます。あとはmargin:0
+        auto;を使って、左右のマージンを自動にしてます。これで、記事が真ん中に表示されるようになります。</p>
+    </div>
+    <div class="paragraph-width-1">
+        <h3>サイズ18px, 行間150%(27px) 太さ400 (Regular)</h3>
+            <p class="font18-150-400">こちらのテキストは、CSSで横幅を最大600pxに指定しています。横幅はmax-width:
+                600px;で指定しています。横幅が600pxよりも小さい場合、ブラウザがその幅に応じて文字を折り返してくれます。あとはmargin:0
+                auto;を使って、左右のマージンを自動にしてます。これで、記事が真ん中に表示されるようになります。</p>
+    </div>
+    <div class="paragraph-width-1">
+        <h3>サイズ16px, 行間175% (28px)太さ400 (Regular)</h3>
+        <p class="font16-175-400">こちらのテキストは、CSSで横幅を最大600pxに指定しています。横幅はmax-width:
+            600px;で指定しています。横幅が600pxよりも小さい場合、ブラウザがその幅に応じて文字を折り返してくれます。あとはmargin:0
+            auto;を使って、左右のマージンを自動にしてます。これで、記事が真ん中に表示されるようになります。</p>
+    </div>
+    <div class="paragraph-width-1">
+        <h3>サイズ17px, 行間175%(29.75px) 太さ400 (Regular)</h3>
+        <p class="font17-175-400">こちらのテキストは、CSSで横幅を最大600pxに指定しています。横幅はmax-width:
+            600px;で指定しています。横幅が600pxよりも小さい場合、ブラウザがその幅に応じて文字を折り返してくれます。あとはmargin:0
+            auto;を使って、左右のマージンを自動にしてます。これで、記事が真ん中に表示されるようになります。</p>
+    </div>
+    <div class="paragraph-width-1">
+        <<h3>サイズ18px, 行間175%(31.5px) 太さ400 (Regular)</h3>
+            <p class="font18-175-400">こちらのテキストは、CSSで横幅を最大600pxに指定しています。横幅はmax-width:
+                600px;で指定しています。横幅が600pxよりも小さい場合、ブラウザがその幅に応じて文字を折り返してくれます。あとはmargin:0
+                auto;を使って、左右のマージンを自動にしてます。これで、記事が真ん中に表示されるようになります。</p>
+    </div>
+    <div class="paragraph-width-1">
+        <h3>サイズ16px, 行間200%(32px) 太さ400 (Regular)</h3>
+        <p class="font16-200-400">こちらのテキストは、CSSで横幅を最大600pxに指定しています。横幅はmax-width:
+            600px;で指定しています。横幅が600pxよりも小さい場合、ブラウザがその幅に応じて文字を折り返してくれます。あとはmargin:0
+            auto;を使って、左右のマージンを自動にしてます。これで、記事が真ん中に表示されるようになります。</p>
+    </div>
+    <div class="paragraph-width-1">
+        <h3>サイズ17px, 行間200%(34px) 太さ400 (Regular)</h3>
+        <p class="font17-200-400">こちらのテキストは、CSSで横幅を最大600pxに指定しています。横幅はmax-width:
+            600px;で指定しています。横幅が600pxよりも小さい場合、ブラウザがその幅に応じて文字を折り返してくれます。あとはmargin:0
+            auto;を使って、左右のマージンを自動にしてます。これで、記事が真ん中に表示されるようになります。</p>
+    </div>
+    <div class="paragraph-width-1">
+        <h3>サイズ18px, 行間200%(36px) 太さ400 (Regular)</h3>
+            <p class="font18-200-400">こちらのテキストは、CSSで横幅を最大600pxに指定しています。横幅はmax-width:
+                600px;で指定しています。横幅が600pxよりも小さい場合、ブラウザがその幅に応じて文字を折り返してくれます。あとはmargin:0
+                auto;を使って、左右のマージンを自動にしてます。これで、記事が真ん中に表示されるようになります。</p>
+    </div>
+    <div class="paragraph-width-1">
+        <h3>サイズ16px, 行間150% 太さ500 (Medium)</h3>
+        <p class="font16-150-500">こちらのテキストは、CSSで横幅を最大600pxに指定しています。横幅はmax-width:
+            600px;で指定しています。横幅が600pxよりも小さい場合、ブラウザがその幅に応じて文字を折り返してくれます。あとはmargin:0
+            auto;を使って、左右のマージンを自動にしてます。これで、記事が真ん中に表示されるようになります。</p>
+    <div class="paragraph-width-1">
+        <h3>サイズ17px, 行間150% 太さ500 (Medium)</h3>
+        <p class="font17-150-500">こちらのテキストは、CSSで横幅を最大600pxに指定しています。横幅はmax-width:
+            600px;で指定しています。横幅が600pxよりも小さい場合、ブラウザがその幅に応じて文字を折り返してくれます。あとはmargin:0
+            auto;を使って、左右のマージンを自動にしてます。これで、記事が真ん中に表示されるようになります。</p>
+    </div>
+    <div class="paragraph-width-1">
+        <h3>サイズ18px, 行間150% 太さ500 (Medium)</h3>
+            <p class="font18-150-500">こちらのテキストは、CSSで横幅を最大600pxに指定しています。横幅はmax-width:
+                600px;で指定しています。横幅が600pxよりも小さい場合、ブラウザがその幅に応じて文字を折り返してくれます。あとはmargin:0
+                auto;を使って、左右のマージンを自動にしてます。これで、記事が真ん中に表示されるようになります。</p>
+    </div>
+    <div class="paragraph-width-1">
+        <h3>サイズ16px, 行間175% 太さ500 (Medium)</h3>
+        <p class="font16-175-500">こちらのテキストは、CSSで横幅を最大600pxに指定しています。横幅はmax-width:
+            600px;で指定しています。横幅が600pxよりも小さい場合、ブラウザがその幅に応じて文字を折り返してくれます。あとはmargin:0
+            auto;を使って、左右のマージンを自動にしてます。これで、記事が真ん中に表示されるようになります。</p>
+    </div>
+    <div class="paragraph-width-1">
+        <h3>サイズ17px, 行間175% 太さ500 (Medium)</h3>
+        <p class="font17-175-500">こちらのテキストは、CSSで横幅を最大600pxに指定しています。横幅はmax-width:
+            600px;で指定しています。横幅が600pxよりも小さい場合、ブラウザがその幅に応じて文字を折り返してくれます。あとはmargin:0
+            auto;を使って、左右のマージンを自動にしてます。これで、記事が真ん中に表示されるようになります。</p>
+    </div>
+    <div class="paragraph-width-1">
+        <h3>サイズ18px, 行間175% 太さ500 (Medium)</h3>
+            <p class="font18-175-500">こちらのテキストは、CSSで横幅を最大600pxに指定しています。横幅はmax-width:
+                600px;で指定しています。横幅が600pxよりも小さい場合、ブラウザがその幅に応じて文字を折り返してくれます。あとはmargin:0
+                auto;を使って、左右のマージンを自動にしてます。これで、記事が真ん中に表示されるようになります。</p>
+    </div>
+    <div class="paragraph-width-1">
+        <h3>サイズ16px, 行間200% 太さ500 (Medium)</h3>
+        <p class="font16-200-500">こちらのテキストは、CSSで横幅を最大600pxに指定しています。横幅はmax-width:
+            600px;で指定しています。横幅が600pxよりも小さい場合、ブラウザがその幅に応じて文字を折り返してくれます。あとはmargin:0
+            auto;を使って、左右のマージンを自動にしてます。これで、記事が真ん中に表示されるようになります。</p>
+    </div>
+    <div class="paragraph-width-1">
+        <h3>サイズ17px, 行間200% 太さ500 (Medium)</h3>
+        <p class="font17-200-500">こちらのテキストは、CSSで横幅を最大600pxに指定しています。横幅はmax-width:
+            600px;で指定しています。横幅が600pxよりも小さい場合、ブラウザがその幅に応じて文字を折り返してくれます。あとはmargin:0
+            auto;を使って、左右のマージンを自動にしてます。これで、記事が真ん中に表示されるようになります。</p>
+    </div>
+    <div class="paragraph-width-1">
+        <h3>サイズ18px, 行間200% 太さ500 (Medium)</h3>
+            <p class="font18-200-500">こちらのテキストは、CSSで横幅を最大600pxに指定しています。横幅はmax-width:
+                600px;で指定しています。横幅が600pxよりも小さい場合、ブラウザがその幅に応じて文字を折り返してくれます。あとはmargin:0
+                auto;を使って、左右のマージンを自動にしてます。これで、記事が真ん中に表示されるようになります。</p>
+    </div>
+
+    <!-- Pargraph below is a width of 544px -->
+
+    <div class="paragraph-width-2">
+        <h3>サイズ16px, 行間150%(24px) 太さ400 (Regular)</h3>
+      <p  class="font16-150-400">こちらのテキストは、CSSで横幅を最大600pxに指定しています。横幅はmax-width: 600px;で指定しています。横幅が600pxよりも小さい場合、ブラウザがその幅に応じて文字を折り返してくれます。あとはmargin:0 auto;を使って、左右のマージンを自動にしてます。これで、記事が真ん中に表示されるようになります。</p>
+    </div>
+    <div class="paragraph-width-2">
+        <h3>サイズ17px, 行間150%(25.5px) 太さ400 (Regular)</h3>
+        <p class="font17-150-400">こちらのテキストは、CSSで横幅を最大600pxに指定しています。横幅はmax-width:
+            600px;で指定しています。横幅が600pxよりも小さい場合、ブラウザがその幅に応じて文字を折り返してくれます。あとはmargin:0
+            auto;を使って、左右のマージンを自動にしてます。これで、記事が真ん中に表示されるようになります。</p>
+        </div>
+        <div class="paragraph-width-2">
+            <h3>サイズ18px, 行間150%(27px) 太さ400 (Regular)</h3>
+                <p class="font18-150-400">こちらのテキストは、CSSで横幅を最大600pxに指定しています。横幅はmax-width:
+                    600px;で指定しています。横幅が600pxよりも小さい場合、ブラウザがその幅に応じて文字を折り返してくれます。あとはmargin:0
+                    auto;を使って、左右のマージンを自動にしてます。これで、記事が真ん中に表示されるようになります。</p>
+        </div>
+        <div class="paragraph-width-2">
+            <h3>サイズ16px, 行間175% (28px)太さ400 (Regular)</h3>
+            <p class="font16-175-400">こちらのテキストは、CSSで横幅を最大600pxに指定しています。横幅はmax-width:
+                600px;で指定しています。横幅が600pxよりも小さい場合、ブラウザがその幅に応じて文字を折り返してくれます。あとはmargin:0
+                auto;を使って、左右のマージンを自動にしてます。これで、記事が真ん中に表示されるようになります。</p>
+        </div>
+        <div class="paragraph-width-2">
+            <h3>サイズ17px, 行間175%(29.75px) 太さ400 (Regular)</h3>
+            <p class="font17-175-400">こちらのテキストは、CSSで横幅を最大600pxに指定しています。横幅はmax-width:
+                600px;で指定しています。横幅が600pxよりも小さい場合、ブラウザがその幅に応じて文字を折り返してくれます。あとはmargin:0
+                auto;を使って、左右のマージンを自動にしてます。これで、記事が真ん中に表示されるようになります。</p>
+        </div>
+        <div class="paragraph-width-2">
+            <<h3>サイズ18px, 行間175%(31.5px) 太さ400 (Regular)</h3>
+                <p class="font18-175-400">こちらのテキストは、CSSで横幅を最大600pxに指定しています。横幅はmax-width:
+                    600px;で指定しています。横幅が600pxよりも小さい場合、ブラウザがその幅に応じて文字を折り返してくれます。あとはmargin:0
+                    auto;を使って、左右のマージンを自動にしてます。これで、記事が真ん中に表示されるようになります。</p>
+        </div>
+        <div class="paragraph-width-2">
+            <h3>サイズ16px, 行間200%(32px) 太さ400 (Regular)</h3>
+            <p class="font16-200-400">こちらのテキストは、CSSで横幅を最大600pxに指定しています。横幅はmax-width:
+                600px;で指定しています。横幅が600pxよりも小さい場合、ブラウザがその幅に応じて文字を折り返してくれます。あとはmargin:0
+                auto;を使って、左右のマージンを自動にしてます。これで、記事が真ん中に表示されるようになります。</p>
+        </div>
+        <div class="paragraph-width-2">
+            <h3>サイズ17px, 行間200%(34px) 太さ400 (Regular)</h3>
+            <p class="font17-200-400">こちらのテキストは、CSSで横幅を最大600pxに指定しています。横幅はmax-width:
+                600px;で指定しています。横幅が600pxよりも小さい場合、ブラウザがその幅に応じて文字を折り返してくれます。あとはmargin:0
+                auto;を使って、左右のマージンを自動にしてます。これで、記事が真ん中に表示されるようになります。</p>
+        </div>
+        <div class="paragraph-width-2">
+            <h3>サイズ18px, 行間200%(36px) 太さ400 (Regular)</h3>
+                <p class="font18-200-400">こちらのテキストは、CSSで横幅を最大600pxに指定しています。横幅はmax-width:
+                    600px;で指定しています。横幅が600pxよりも小さい場合、ブラウザがその幅に応じて文字を折り返してくれます。あとはmargin:0
+                    auto;を使って、左右のマージンを自動にしてます。これで、記事が真ん中に表示されるようになります。</p>
+        </div>
+        <div class="paragraph-width-2">
+            <h3>サイズ16px, 行間150% 太さ500 (Medium)</h3>
+            <p class="font16-150-500">こちらのテキストは、CSSで横幅を最大600pxに指定しています。横幅はmax-width:
+                600px;で指定しています。横幅が600pxよりも小さい場合、ブラウザがその幅に応じて文字を折り返してくれます。あとはmargin:0
+                auto;を使って、左右のマージンを自動にしてます。これで、記事が真ん中に表示されるようになります。</p>
+        <div class="paragraph-width-2">
+            <h3>サイズ17px, 行間150% 太さ500 (Medium)</h3>
+            <p class="font17-150-500">こちらのテキストは、CSSで横幅を最大600pxに指定しています。横幅はmax-width:
+                600px;で指定しています。横幅が600pxよりも小さい場合、ブラウザがその幅に応じて文字を折り返してくれます。あとはmargin:0
+                auto;を使って、左右のマージンを自動にしてます。これで、記事が真ん中に表示されるようになります。</p>
+        </div>
+        <div class="paragraph-width-2">
+            <h3>サイズ18px, 行間150% 太さ500 (Medium)</h3>
+                <p class="font18-150-500">こちらのテキストは、CSSで横幅を最大600pxに指定しています。横幅はmax-width:
+                    600px;で指定しています。横幅が600pxよりも小さい場合、ブラウザがその幅に応じて文字を折り返してくれます。あとはmargin:0
+                    auto;を使って、左右のマージンを自動にしてます。これで、記事が真ん中に表示されるようになります。</p>
+        </div>
+        <div class="paragraph-width-2">
+            <h3>サイズ16px, 行間175% 太さ500 (Medium)</h3>
+            <p class="font16-175-500">こちらのテキストは、CSSで横幅を最大600pxに指定しています。横幅はmax-width:
+                600px;で指定しています。横幅が600pxよりも小さい場合、ブラウザがその幅に応じて文字を折り返してくれます。あとはmargin:0
+                auto;を使って、左右のマージンを自動にしてます。これで、記事が真ん中に表示されるようになります。</p>
+        </div>
+        <div class="paragraph-width-2">
+            <h3>サイズ17px, 行間175% 太さ500 (Medium)</h3>
+            <p class="font17-175-500">こちらのテキストは、CSSで横幅を最大600pxに指定しています。横幅はmax-width:
+                600px;で指定しています。横幅が600pxよりも小さい場合、ブラウザがその幅に応じて文字を折り返してくれます。あとはmargin:0
+                auto;を使って、左右のマージンを自動にしてます。これで、記事が真ん中に表示されるようになります。</p>
+        </div>
+        <div class="paragraph-width-2">
+            <h3>サイズ18px, 行間175% 太さ500 (Medium)</h3>
+                <p class="font18-175-500">こちらのテキストは、CSSで横幅を最大600pxに指定しています。横幅はmax-width:
+                    600px;で指定しています。横幅が600pxよりも小さい場合、ブラウザがその幅に応じて文字を折り返してくれます。あとはmargin:0
+                    auto;を使って、左右のマージンを自動にしてます。これで、記事が真ん中に表示されるようになります。</p>
+        </div>
+        <div class="paragraph-width-2">
+            <h3>サイズ16px, 行間200% 太さ500 (Medium)</h3>
+            <p class="font16-200-500">こちらのテキストは、CSSで横幅を最大600pxに指定しています。横幅はmax-width:
+                600px;で指定しています。横幅が600pxよりも小さい場合、ブラウザがその幅に応じて文字を折り返してくれます。あとはmargin:0
+                auto;を使って、左右のマージンを自動にしてます。これで、記事が真ん中に表示されるようになります。</p>
+        </div>
+        <div class="paragraph-width-2">
+            <h3>サイズ17px, 行間200% 太さ500 (Medium)</h3>
+            <p class="font17-200-500">こちらのテキストは、CSSで横幅を最大600pxに指定しています。横幅はmax-width:
+                600px;で指定しています。横幅が600pxよりも小さい場合、ブラウザがその幅に応じて文字を折り返してくれます。あとはmargin:0
+                auto;を使って、左右のマージンを自動にしてます。これで、記事が真ん中に表示されるようになります。</p>
+        </div>
+        <div class="paragraph-width-2">
+            <h3>サイズ18px, 行間200% 太さ500 (Medium)</h3>
+                <p class="font18-200-500">こちらのテキストは、CSSで横幅を最大600pxに指定しています。横幅はmax-width:
+                    600px;で指定しています。横幅が600pxよりも小さい場合、ブラウザがその幅に応じて文字を折り返してくれます。あとはmargin:0
+                    auto;を使って、左右のマージンを自動にしてます。これで、記事が真ん中に表示されるようになります。</p>
+        </div>
+        <div class="paragraph-width-2">
+        <h3>サイズ16px, 行間150%(24px) 太さ400 (Regular)</h3>
+      <p  class="font16-150-400">こちらのテキストは、CSSで横幅を最大600pxに指定しています。横幅はmax-width: 600px;で指定しています。横幅が600pxよりも小さい場合、ブラウザがその幅に応じて文字を折り返してくれます。あとはmargin:0 auto;を使って、左右のマージンを自動にしてます。これで、記事が真ん中に表示されるようになります。</p>
+    </div>
+    <div class="paragraph-width-2">
+        <h3>サイズ17px, 行間150%(25.5px) 太さ400 (Regular)</h3>
+        <p class="font17-150-400">こちらのテキストは、CSSで横幅を最大600pxに指定しています。横幅はmax-width:
+            600px;で指定しています。横幅が600pxよりも小さい場合、ブラウザがその幅に応じて文字を折り返してくれます。あとはmargin:0
+            auto;を使って、左右のマージンを自動にしてます。これで、記事が真ん中に表示されるようになります。</p>
+        </div>
+        <div class="paragraph-width-2">
+            <h3>サイズ18px, 行間150%(27px) 太さ400 (Regular)</h3>
+                <p class="font18-150-400">こちらのテキストは、CSSで横幅を最大600pxに指定しています。横幅はmax-width:
+                    600px;で指定しています。横幅が600pxよりも小さい場合、ブラウザがその幅に応じて文字を折り返してくれます。あとはmargin:0
+                    auto;を使って、左右のマージンを自動にしてます。これで、記事が真ん中に表示されるようになります。</p>
+        </div>
+        <div class="paragraph-width-2">
+            <h3>サイズ16px, 行間175% (28px)太さ400 (Regular)</h3>
+            <p class="font16-175-400">こちらのテキストは、CSSで横幅を最大600pxに指定しています。横幅はmax-width:
+                600px;で指定しています。横幅が600pxよりも小さい場合、ブラウザがその幅に応じて文字を折り返してくれます。あとはmargin:0
+                auto;を使って、左右のマージンを自動にしてます。これで、記事が真ん中に表示されるようになります。</p>
+        </div>
+        <div class="paragraph-width-2">
+            <h3>サイズ17px, 行間175%(29.75px) 太さ400 (Regular)</h3>
+            <p class="font17-175-400">こちらのテキストは、CSSで横幅を最大600pxに指定しています。横幅はmax-width:
+                600px;で指定しています。横幅が600pxよりも小さい場合、ブラウザがその幅に応じて文字を折り返してくれます。あとはmargin:0
+                auto;を使って、左右のマージンを自動にしてます。これで、記事が真ん中に表示されるようになります。</p>
+        </div>
+        <div class="paragraph-width-2">
+            <<h3>サイズ18px, 行間175%(31.5px) 太さ400 (Regular)</h3>
+                <p class="font18-175-400">こちらのテキストは、CSSで横幅を最大600pxに指定しています。横幅はmax-width:
+                    600px;で指定しています。横幅が600pxよりも小さい場合、ブラウザがその幅に応じて文字を折り返してくれます。あとはmargin:0
+                    auto;を使って、左右のマージンを自動にしてます。これで、記事が真ん中に表示されるようになります。</p>
+        </div>
+        <div class="paragraph-width-2">
+            <h3>サイズ16px, 行間200%(32px) 太さ400 (Regular)</h3>
+            <p class="font16-200-400">こちらのテキストは、CSSで横幅を最大600pxに指定しています。横幅はmax-width:
+                600px;で指定しています。横幅が600pxよりも小さい場合、ブラウザがその幅に応じて文字を折り返してくれます。あとはmargin:0
+                auto;を使って、左右のマージンを自動にしてます。これで、記事が真ん中に表示されるようになります。</p>
+        </div>
+        <div class="paragraph-width-2">
+            <h3>サイズ17px, 行間200%(34px) 太さ400 (Regular)</h3>
+            <p class="font17-200-400">こちらのテキストは、CSSで横幅を最大600pxに指定しています。横幅はmax-width:
+                600px;で指定しています。横幅が600pxよりも小さい場合、ブラウザがその幅に応じて文字を折り返してくれます。あとはmargin:0
+                auto;を使って、左右のマージンを自動にしてます。これで、記事が真ん中に表示されるようになります。</p>
+        </div>
+        <div class="paragraph-width-2">
+            <h3>サイズ18px, 行間200%(36px) 太さ400 (Regular)</h3>
+                <p class="font18-200-400">こちらのテキストは、CSSで横幅を最大600pxに指定しています。横幅はmax-width:
+                    600px;で指定しています。横幅が600pxよりも小さい場合、ブラウザがその幅に応じて文字を折り返してくれます。あとはmargin:0
+                    auto;を使って、左右のマージンを自動にしてます。これで、記事が真ん中に表示されるようになります。</p>
+        </div>
+        <div class="paragraph-width-2">
+            <h3>サイズ16px, 行間150% 太さ500 (Medium)</h3>
+            <p class="font16-150-500">こちらのテキストは、CSSで横幅を最大600pxに指定しています。横幅はmax-width:
+                600px;で指定しています。横幅が600pxよりも小さい場合、ブラウザがその幅に応じて文字を折り返してくれます。あとはmargin:0
+                auto;を使って、左右のマージンを自動にしてます。これで、記事が真ん中に表示されるようになります。</p>
+        <div class="paragraph-width-2">
+            <h3>サイズ17px, 行間150% 太さ500 (Medium)</h3>
+            <p class="font17-150-500">こちらのテキストは、CSSで横幅を最大600pxに指定しています。横幅はmax-width:
+                600px;で指定しています。横幅が600pxよりも小さい場合、ブラウザがその幅に応じて文字を折り返してくれます。あとはmargin:0
+                auto;を使って、左右のマージンを自動にしてます。これで、記事が真ん中に表示されるようになります。</p>
+        </div>
+        <div class="paragraph-width-2">
+            <h3>サイズ18px, 行間150% 太さ500 (Medium)</h3>
+                <p class="font18-150-500">こちらのテキストは、CSSで横幅を最大600pxに指定しています。横幅はmax-width:
+                    600px;で指定しています。横幅が600pxよりも小さい場合、ブラウザがその幅に応じて文字を折り返してくれます。あとはmargin:0
+                    auto;を使って、左右のマージンを自動にしてます。これで、記事が真ん中に表示されるようになります。</p>
+        </div>
+        <div class="paragraph-width-2">
+            <h3>サイズ16px, 行間175% 太さ500 (Medium)</h3>
+            <p class="font16-175-500">こちらのテキストは、CSSで横幅を最大600pxに指定しています。横幅はmax-width:
+                600px;で指定しています。横幅が600pxよりも小さい場合、ブラウザがその幅に応じて文字を折り返してくれます。あとはmargin:0
+                auto;を使って、左右のマージンを自動にしてます。これで、記事が真ん中に表示されるようになります。</p>
+        </div>
+        <div class="paragraph-width-2">
+            <h3>サイズ17px, 行間175% 太さ500 (Medium)</h3>
+            <p class="font17-175-500">こちらのテキストは、CSSで横幅を最大600pxに指定しています。横幅はmax-width:
+                600px;で指定しています。横幅が600pxよりも小さい場合、ブラウザがその幅に応じて文字を折り返してくれます。あとはmargin:0
+                auto;を使って、左右のマージンを自動にしてます。これで、記事が真ん中に表示されるようになります。</p>
+        </div>
+        <div class="paragraph-width-2">
+            <h3>サイズ18px, 行間175% 太さ500 (Medium)</h3>
+                <p class="font18-175-500">こちらのテキストは、CSSで横幅を最大600pxに指定しています。横幅はmax-width:
+                    600px;で指定しています。横幅が600pxよりも小さい場合、ブラウザがその幅に応じて文字を折り返してくれます。あとはmargin:0
+                    auto;を使って、左右のマージンを自動にしてます。これで、記事が真ん中に表示されるようになります。</p>
+        </div>
+        <div class="paragraph-width-2">
+            <h3>サイズ16px, 行間200% 太さ500 (Medium)</h3>
+            <p class="font16-200-500">こちらのテキストは、CSSで横幅を最大600pxに指定しています。横幅はmax-width:
+                600px;で指定しています。横幅が600pxよりも小さい場合、ブラウザがその幅に応じて文字を折り返してくれます。あとはmargin:0
+                auto;を使って、左右のマージンを自動にしてます。これで、記事が真ん中に表示されるようになります。</p>
+        </div>
+        <div class="paragraph-width-2">
+            <h3>サイズ17px, 行間200% 太さ500 (Medium)</h3>
+            <p class="font17-200-500">こちらのテキストは、CSSで横幅を最大600pxに指定しています。横幅はmax-width:
+                600px;で指定しています。横幅が600pxよりも小さい場合、ブラウザがその幅に応じて文字を折り返してくれます。あとはmargin:0
+                auto;を使って、左右のマージンを自動にしてます。これで、記事が真ん中に表示されるようになります。</p>
+        </div>
+        <div class="paragraph-width-2">
+            <h3>サイズ18px, 行間200% 太さ500 (Medium)</h3>
+                <p class="font18-200-500">こちらのテキストは、CSSで横幅を最大600pxに指定しています。横幅はmax-width:
+                    600px;で指定しています。横幅が600pxよりも小さい場合、ブラウザがその幅に応じて文字を折り返してくれます。あとはmargin:0
+                    auto;を使って、左右のマージンを自動にしてます。これで、記事が真ん中に表示されるようになります。</p>
+        </div>
+
+        <!-- Paragraph below is a width of 352px -->
+        
+        <div class="paragraph-width-3">
+            <h3>サイズ16px, 行間150%(24px) 太さ400 (Regular)</h3>
+          <p  class="font16-150-400">こちらのテキストは、CSSで横幅を最大600pxに指定しています。横幅はmax-width: 600px;で指定しています。横幅が600pxよりも小さい場合、ブラウザがその幅に応じて文字を折り返してくれます。あとはmargin:0 auto;を使って、左右のマージンを自動にしてます。これで、記事が真ん中に表示されるようになります。</p>
+        </div>
+        <div class="paragraph-width-3">
+            <h3>サイズ17px, 行間150%(25.5px) 太さ400 (Regular)</h3>
+            <p class="font17-150-400">こちらのテキストは、CSSで横幅を最大600pxに指定しています。横幅はmax-width:
+                600px;で指定しています。横幅が600pxよりも小さい場合、ブラウザがその幅に応じて文字を折り返してくれます。あとはmargin:0
+                auto;を使って、左右のマージンを自動にしてます。これで、記事が真ん中に表示されるようになります。</p>
+            </div>
+            <div class="paragraph-width-3">
+                <h3>サイズ18px, 行間150%(27px) 太さ400 (Regular)</h3>
+                    <p class="font18-150-400">こちらのテキストは、CSSで横幅を最大600pxに指定しています。横幅はmax-width:
+                        600px;で指定しています。横幅が600pxよりも小さい場合、ブラウザがその幅に応じて文字を折り返してくれます。あとはmargin:0
+                        auto;を使って、左右のマージンを自動にしてます。これで、記事が真ん中に表示されるようになります。</p>
+            </div>
+            <div class="paragraph-width-3">
+                <h3>サイズ16px, 行間175% (28px)太さ400 (Regular)</h3>
+                <p class="font16-175-400">こちらのテキストは、CSSで横幅を最大600pxに指定しています。横幅はmax-width:
+                    600px;で指定しています。横幅が600pxよりも小さい場合、ブラウザがその幅に応じて文字を折り返してくれます。あとはmargin:0
+                    auto;を使って、左右のマージンを自動にしてます。これで、記事が真ん中に表示されるようになります。</p>
+            </div>
+            <div class="paragraph-width-3">
+                <h3>サイズ17px, 行間175%(29.75px) 太さ400 (Regular)</h3>
+                <p class="font17-175-400">こちらのテキストは、CSSで横幅を最大600pxに指定しています。横幅はmax-width:
+                    600px;で指定しています。横幅が600pxよりも小さい場合、ブラウザがその幅に応じて文字を折り返してくれます。あとはmargin:0
+                    auto;を使って、左右のマージンを自動にしてます。これで、記事が真ん中に表示されるようになります。</p>
+            </div>
+            <div class="paragraph-width-3">
+                <<h3>サイズ18px, 行間175%(31.5px) 太さ400 (Regular)</h3>
+                    <p class="font18-175-400">こちらのテキストは、CSSで横幅を最大600pxに指定しています。横幅はmax-width:
+                        600px;で指定しています。横幅が600pxよりも小さい場合、ブラウザがその幅に応じて文字を折り返してくれます。あとはmargin:0
+                        auto;を使って、左右のマージンを自動にしてます。これで、記事が真ん中に表示されるようになります。</p>
+            </div>
+            <div class="paragraph-width-3">
+                <h3>サイズ16px, 行間200%(32px) 太さ400 (Regular)</h3>
+                <p class="font16-200-400">こちらのテキストは、CSSで横幅を最大600pxに指定しています。横幅はmax-width:
+                    600px;で指定しています。横幅が600pxよりも小さい場合、ブラウザがその幅に応じて文字を折り返してくれます。あとはmargin:0
+                    auto;を使って、左右のマージンを自動にしてます。これで、記事が真ん中に表示されるようになります。</p>
+            </div>
+            <div class="paragraph-width-3">
+                <h3>サイズ17px, 行間200%(34px) 太さ400 (Regular)</h3>
+                <p class="font17-200-400">こちらのテキストは、CSSで横幅を最大600pxに指定しています。横幅はmax-width:
+                    600px;で指定しています。横幅が600pxよりも小さい場合、ブラウザがその幅に応じて文字を折り返してくれます。あとはmargin:0
+                    auto;を使って、左右のマージンを自動にしてます。これで、記事が真ん中に表示されるようになります。</p>
+            </div>
+            <div class="paragraph-width-3">
+                <h3>サイズ18px, 行間200%(36px) 太さ400 (Regular)</h3>
+                    <p class="font18-200-400">こちらのテキストは、CSSで横幅を最大600pxに指定しています。横幅はmax-width:
+                        600px;で指定しています。横幅が600pxよりも小さい場合、ブラウザがその幅に応じて文字を折り返してくれます。あとはmargin:0
+                        auto;を使って、左右のマージンを自動にしてます。これで、記事が真ん中に表示されるようになります。</p>
+            </div>
+            <div class="paragraph-width-3">
+                <h3>サイズ16px, 行間150% 太さ500 (Medium)</h3>
+                <p class="font16-150-500">こちらのテキストは、CSSで横幅を最大600pxに指定しています。横幅はmax-width:
+                    600px;で指定しています。横幅が600pxよりも小さい場合、ブラウザがその幅に応じて文字を折り返してくれます。あとはmargin:0
+                    auto;を使って、左右のマージンを自動にしてます。これで、記事が真ん中に表示されるようになります。</p>
+            <div class="paragraph-width-3">
+                <h3>サイズ17px, 行間150% 太さ500 (Medium)</h3>
+                <p class="font17-150-500">こちらのテキストは、CSSで横幅を最大600pxに指定しています。横幅はmax-width:
+                    600px;で指定しています。横幅が600pxよりも小さい場合、ブラウザがその幅に応じて文字を折り返してくれます。あとはmargin:0
+                    auto;を使って、左右のマージンを自動にしてます。これで、記事が真ん中に表示されるようになります。</p>
+            </div>
+            <div class="paragraph-width-3">
+                <h3>サイズ18px, 行間150% 太さ500 (Medium)</h3>
+                    <p class="font18-150-500">こちらのテキストは、CSSで横幅を最大600pxに指定しています。横幅はmax-width:
+                        600px;で指定しています。横幅が600pxよりも小さい場合、ブラウザがその幅に応じて文字を折り返してくれます。あとはmargin:0
+                        auto;を使って、左右のマージンを自動にしてます。これで、記事が真ん中に表示されるようになります。</p>
+            </div>
+            <div class="paragraph-width-3">
+                <h3>サイズ16px, 行間175% 太さ500 (Medium)</h3>
+                <p class="font16-175-500">こちらのテキストは、CSSで横幅を最大600pxに指定しています。横幅はmax-width:
+                    600px;で指定しています。横幅が600pxよりも小さい場合、ブラウザがその幅に応じて文字を折り返してくれます。あとはmargin:0
+                    auto;を使って、左右のマージンを自動にしてます。これで、記事が真ん中に表示されるようになります。</p>
+            </div>
+            <div class="paragraph-width-3">
+                <h3>サイズ17px, 行間175% 太さ500 (Medium)</h3>
+                <p class="font17-175-500">こちらのテキストは、CSSで横幅を最大600pxに指定しています。横幅はmax-width:
+                    600px;で指定しています。横幅が600pxよりも小さい場合、ブラウザがその幅に応じて文字を折り返してくれます。あとはmargin:0
+                    auto;を使って、左右のマージンを自動にしてます。これで、記事が真ん中に表示されるようになります。</p>
+            </div>
+            <div class="paragraph-width-3">
+                <h3>サイズ18px, 行間175% 太さ500 (Medium)</h3>
+                    <p class="font18-175-500">こちらのテキストは、CSSで横幅を最大600pxに指定しています。横幅はmax-width:
+                        600px;で指定しています。横幅が600pxよりも小さい場合、ブラウザがその幅に応じて文字を折り返してくれます。あとはmargin:0
+                        auto;を使って、左右のマージンを自動にしてます。これで、記事が真ん中に表示されるようになります。</p>
+            </div>
+            <div class="paragraph-width-3">
+                <h3>サイズ16px, 行間200% 太さ500 (Medium)</h3>
+                <p class="font16-200-500">こちらのテキストは、CSSで横幅を最大600pxに指定しています。横幅はmax-width:
+                    600px;で指定しています。横幅が600pxよりも小さい場合、ブラウザがその幅に応じて文字を折り返してくれます。あとはmargin:0
+                    auto;を使って、左右のマージンを自動にしてます。これで、記事が真ん中に表示されるようになります。</p>
+            </div>
+            <div class="paragraph-width-3">
+                <h3>サイズ17px, 行間200% 太さ500 (Medium)</h3>
+                <p class="font17-200-500">こちらのテキストは、CSSで横幅を最大600pxに指定しています。横幅はmax-width:
+                    600px;で指定しています。横幅が600pxよりも小さい場合、ブラウザがその幅に応じて文字を折り返してくれます。あとはmargin:0
+                    auto;を使って、左右のマージンを自動にしてます。これで、記事が真ん中に表示されるようになります。</p>
+            </div>
+            <div class="paragraph-width-3">
+                <h3>サイズ18px, 行間200% 太さ500 (Medium)</h3>
+                    <p class="font18-200-500">こちらのテキストは、CSSで横幅を最大600pxに指定しています。横幅はmax-width:
+                        600px;で指定しています。横幅が600pxよりも小さい場合、ブラウザがその幅に応じて文字を折り返してくれます。あとはmargin:0
+                        auto;を使って、左右のマージンを自動にしてます。これで、記事が真ん中に表示されるようになります。</p>
+            </div>
+            <div class="paragraph-width-3">
+            <h3>サイズ16px, 行間150%(24px) 太さ400 (Regular)</h3>
+          <p  class="font16-150-400">こちらのテキストは、CSSで横幅を最大600pxに指定しています。横幅はmax-width: 600px;で指定しています。横幅が600pxよりも小さい場合、ブラウザがその幅に応じて文字を折り返してくれます。あとはmargin:0 auto;を使って、左右のマージンを自動にしてます。これで、記事が真ん中に表示されるようになります。</p>
+        </div>
+        <div class="paragraph-width-3">
+            <h3>サイズ17px, 行間150%(25.5px) 太さ400 (Regular)</h3>
+            <p class="font17-150-400">こちらのテキストは、CSSで横幅を最大600pxに指定しています。横幅はmax-width:
+                600px;で指定しています。横幅が600pxよりも小さい場合、ブラウザがその幅に応じて文字を折り返してくれます。あとはmargin:0
+                auto;を使って、左右のマージンを自動にしてます。これで、記事が真ん中に表示されるようになります。</p>
+            </div>
+            <div class="paragraph-width-3">
+                <h3>サイズ18px, 行間150%(27px) 太さ400 (Regular)</h3>
+                    <p class="font18-150-400">こちらのテキストは、CSSで横幅を最大600pxに指定しています。横幅はmax-width:
+                        600px;で指定しています。横幅が600pxよりも小さい場合、ブラウザがその幅に応じて文字を折り返してくれます。あとはmargin:0
+                        auto;を使って、左右のマージンを自動にしてます。これで、記事が真ん中に表示されるようになります。</p>
+            </div>
+            <div class="paragraph-width-3">
+                <h3>サイズ16px, 行間175% (28px)太さ400 (Regular)</h3>
+                <p class="font16-175-400">こちらのテキストは、CSSで横幅を最大600pxに指定しています。横幅はmax-width:
+                    600px;で指定しています。横幅が600pxよりも小さい場合、ブラウザがその幅に応じて文字を折り返してくれます。あとはmargin:0
+                    auto;を使って、左右のマージンを自動にしてます。これで、記事が真ん中に表示されるようになります。</p>
+            </div>
+            <div class="paragraph-width-3">
+                <h3>サイズ17px, 行間175%(29.75px) 太さ400 (Regular)</h3>
+                <p class="font17-175-400">こちらのテキストは、CSSで横幅を最大600pxに指定しています。横幅はmax-width:
+                    600px;で指定しています。横幅が600pxよりも小さい場合、ブラウザがその幅に応じて文字を折り返してくれます。あとはmargin:0
+                    auto;を使って、左右のマージンを自動にしてます。これで、記事が真ん中に表示されるようになります。</p>
+            </div>
+            <div class="paragraph-width-3">
+                <<h3>サイズ18px, 行間175%(31.5px) 太さ400 (Regular)</h3>
+                    <p class="font18-175-400">こちらのテキストは、CSSで横幅を最大600pxに指定しています。横幅はmax-width:
+                        600px;で指定しています。横幅が600pxよりも小さい場合、ブラウザがその幅に応じて文字を折り返してくれます。あとはmargin:0
+                        auto;を使って、左右のマージンを自動にしてます。これで、記事が真ん中に表示されるようになります。</p>
+            </div>
+            <div class="paragraph-width-3">
+                <h3>サイズ16px, 行間200%(32px) 太さ400 (Regular)</h3>
+                <p class="font16-200-400">こちらのテキストは、CSSで横幅を最大600pxに指定しています。横幅はmax-width:
+                    600px;で指定しています。横幅が600pxよりも小さい場合、ブラウザがその幅に応じて文字を折り返してくれます。あとはmargin:0
+                    auto;を使って、左右のマージンを自動にしてます。これで、記事が真ん中に表示されるようになります。</p>
+            </div>
+            <div class="paragraph-width-3">
+                <h3>サイズ17px, 行間200%(34px) 太さ400 (Regular)</h3>
+                <p class="font17-200-400">こちらのテキストは、CSSで横幅を最大600pxに指定しています。横幅はmax-width:
+                    600px;で指定しています。横幅が600pxよりも小さい場合、ブラウザがその幅に応じて文字を折り返してくれます。あとはmargin:0
+                    auto;を使って、左右のマージンを自動にしてます。これで、記事が真ん中に表示されるようになります。</p>
+            </div>
+            <div class="paragraph-width-3">
+                <h3>サイズ18px, 行間200%(36px) 太さ400 (Regular)</h3>
+                    <p class="font18-200-400">こちらのテキストは、CSSで横幅を最大600pxに指定しています。横幅はmax-width:
+                        600px;で指定しています。横幅が600pxよりも小さい場合、ブラウザがその幅に応じて文字を折り返してくれます。あとはmargin:0
+                        auto;を使って、左右のマージンを自動にしてます。これで、記事が真ん中に表示されるようになります。</p>
+            </div>
+            <div class="paragraph-width-3">
+                <h3>サイズ16px, 行間150% 太さ500 (Medium)</h3>
+                <p class="font16-150-500">こちらのテキストは、CSSで横幅を最大600pxに指定しています。横幅はmax-width:
+                    600px;で指定しています。横幅が600pxよりも小さい場合、ブラウザがその幅に応じて文字を折り返してくれます。あとはmargin:0
+                    auto;を使って、左右のマージンを自動にしてます。これで、記事が真ん中に表示されるようになります。</p>
+            <div class="paragraph-width-3">
+                <h3>サイズ17px, 行間150% 太さ500 (Medium)</h3>
+                <p class="font17-150-500">こちらのテキストは、CSSで横幅を最大600pxに指定しています。横幅はmax-width:
+                    600px;で指定しています。横幅が600pxよりも小さい場合、ブラウザがその幅に応じて文字を折り返してくれます。あとはmargin:0
+                    auto;を使って、左右のマージンを自動にしてます。これで、記事が真ん中に表示されるようになります。</p>
+            </div>
+            <div class="paragraph-width-3">
+                <h3>サイズ18px, 行間150% 太さ500 (Medium)</h3>
+                    <p class="font18-150-500">こちらのテキストは、CSSで横幅を最大600pxに指定しています。横幅はmax-width:
+                        600px;で指定しています。横幅が600pxよりも小さい場合、ブラウザがその幅に応じて文字を折り返してくれます。あとはmargin:0
+                        auto;を使って、左右のマージンを自動にしてます。これで、記事が真ん中に表示されるようになります。</p>
+            </div>
+            <div class="paragraph-width-3">
+                <h3>サイズ16px, 行間175% 太さ500 (Medium)</h3>
+                <p class="font16-175-500">こちらのテキストは、CSSで横幅を最大600pxに指定しています。横幅はmax-width:
+                    600px;で指定しています。横幅が600pxよりも小さい場合、ブラウザがその幅に応じて文字を折り返してくれます。あとはmargin:0
+                    auto;を使って、左右のマージンを自動にしてます。これで、記事が真ん中に表示されるようになります。</p>
+            </div>
+            <div class="paragraph-width-3">
+                <h3>サイズ17px, 行間175% 太さ500 (Medium)</h3>
+                <p class="font17-175-500">こちらのテキストは、CSSで横幅を最大600pxに指定しています。横幅はmax-width:
+                    600px;で指定しています。横幅が600pxよりも小さい場合、ブラウザがその幅に応じて文字を折り返してくれます。あとはmargin:0
+                    auto;を使って、左右のマージンを自動にしてます。これで、記事が真ん中に表示されるようになります。</p>
+            </div>
+            <div class="paragraph-width-3">
+                <h3>サイズ18px, 行間175% 太さ500 (Medium)</h3>
+                    <p class="font18-175-500">こちらのテキストは、CSSで横幅を最大600pxに指定しています。横幅はmax-width:
+                        600px;で指定しています。横幅が600pxよりも小さい場合、ブラウザがその幅に応じて文字を折り返してくれます。あとはmargin:0
+                        auto;を使って、左右のマージンを自動にしてます。これで、記事が真ん中に表示されるようになります。</p>
+            </div>
+            <div class="paragraph-width-3">
+                <h3>サイズ16px, 行間200% 太さ500 (Medium)</h3>
+                <p class="font16-200-500">こちらのテキストは、CSSで横幅を最大600pxに指定しています。横幅はmax-width:
+                    600px;で指定しています。横幅が600pxよりも小さい場合、ブラウザがその幅に応じて文字を折り返してくれます。あとはmargin:0
+                    auto;を使って、左右のマージンを自動にしてます。これで、記事が真ん中に表示されるようになります。</p>
+            </div>
+            <div class="paragraph-width-3">
+                <h3>サイズ17px, 行間200% 太さ500 (Medium)</h3>
+                <p class="font17-200-500">こちらのテキストは、CSSで横幅を最大600pxに指定しています。横幅はmax-width:
+                    600px;で指定しています。横幅が600pxよりも小さい場合、ブラウザがその幅に応じて文字を折り返してくれます。あとはmargin:0
+                    auto;を使って、左右のマージンを自動にしてます。これで、記事が真ん中に表示されるようになります。</p>
+            </div>
+            <div class="paragraph-width-3">
+                <h3>サイズ18px, 行間200% 太さ500 (Medium)</h3>
+                    <p class="font18-200-500">こちらのテキストは、CSSで横幅を最大600pxに指定しています。横幅はmax-width:
+                        600px;で指定しています。横幅が600pxよりも小さい場合、ブラウザがその幅に応じて文字を折り返してくれます。あとはmargin:0
+                        auto;を使って、左右のマージンを自動にしてます。これで、記事が真ん中に表示されるようになります。</p>
+            </div>
+
+            <!-- 3 columns layout for 352px paragraphs -->
+            <div class="item-list">
+                <div class="item">
+                  <p class="title-18-700">サイズ16px, 行間150%(24px) 太さ400 (Regular)</p>
+                  <p class="description-16-150-400">ちらのテキストは、CSSで横幅を最大600pxに指定しています。横幅はmax-width: 600px;で指定しています。横幅が600pxよりも小さい場合、ブラウザがその幅に応じて文字を折り返してくれます。あとはmargin:0 auto;を使って、左右のマージンを自動にしてます。これで、記事が真ん中に表示されるようになります。</p>
+                </div>
+                <div class="item">
+                    <p class="title-18-700">サイズ16px, 行間150%(24px) 太さ400 (Regular)</p>
+                  <p class="description-16-150-400">ちらのテキストは、CSSで横幅を最大600pxに指定しています。横幅はmax-width: 600px;で指定しています。横幅が600pxよりも小さい場合、ブラウザがその幅に応じて文字を折り返してくれます。あとはmargin:0 auto;を使って、左右のマージンを自動にしてます。これで、記事が真ん中に表示されるようになります。</p>
+                </div>
+                <div class="item">
+                    <p class="title-18-700">サイズ16px, 行間150%(24px) 太さ400 (Regular)</p>
+                  <p class="description-16-150-400">ちらのテキストは、CSSで横幅を最大600pxに指定しています。横幅はmax-width: 600px;で指定しています。横幅が600pxよりも小さい場合、ブラウザがその幅に応じて文字を折り返してくれます。あとはmargin:0 auto;を使って、左右のマージンを自動にしてます。これで、記事が真ん中に表示されるようになります。</p>
+                </div>
+              </div>
+              <div class="item-list">
+                <div class="item">
+                  <p class="title-18-700">サイズ16px, 行間175%(24px) 太さ400 (Regular)</p>
+                  <p class="description-16-175-400">ちらのテキストは、CSSで横幅を最大600pxに指定しています。横幅はmax-width: 600px;で指定しています。横幅が600pxよりも小さい場合、ブラウザがその幅に応じて文字を折り返してくれます。あとはmargin:0 auto;を使って、左右のマージンを自動にしてます。これで、記事が真ん中に表示されるようになります。</p>
+                </div>
+                <div class="item">
+                    <p class="title-18-700">サイズ16px, 行間175%(24px) 太さ400 (Regular)</p>
+                  <p class="description-16-175-400">ちらのテキストは、CSSで横幅を最大600pxに指定しています。横幅はmax-width: 600px;で指定しています。横幅が600pxよりも小さい場合、ブラウザがその幅に応じて文字を折り返してくれます。あとはmargin:0 auto;を使って、左右のマージンを自動にしてます。これで、記事が真ん中に表示されるようになります。</p>
+                </div>
+                <div class="item">
+                    <p class="title-18-700">サイズ16px, 行間175%(24px) 太さ400 (Regular)</p>
+                  <p class="description-16-175-400">ちらのテキストは、CSSで横幅を最大600pxに指定しています。横幅はmax-width: 600px;で指定しています。横幅が600pxよりも小さい場合、ブラウザがその幅に応じて文字を折り返してくれます。あとはmargin:0 auto;を使って、左右のマージンを自動にしてます。これで、記事が真ん中に表示されるようになります。</p>
+                </div>
+              </div>
+              <div class="item-list">
+                <div class="item">
+                  <p class="title-18-700">サイズ16px, 行間200%(24px) 太さ400 (Regular)</p>
+                  <p class="description-16-200-400">ちらのテキストは、CSSで横幅を最大600pxに指定しています。横幅はmax-width: 600px;で指定しています。横幅が600pxよりも小さい場合、ブラウザがその幅に応じて文字を折り返してくれます。あとはmargin:0 auto;を使って、左右のマージンを自動にしてます。これで、記事が真ん中に表示されるようになります。</p>
+                </div>
+                <div class="item">
+                    <p class="title-18-700">サイズ16px, 行間200%(24px) 太さ400 (Regular)</p>
+                  <p class="description-16-200-400">ちらのテキストは、CSSで横幅を最大600pxに指定しています。横幅はmax-width: 600px;で指定しています。横幅が600pxよりも小さい場合、ブラウザがその幅に応じて文字を折り返してくれます。あとはmargin:0 auto;を使って、左右のマージンを自動にしてます。これで、記事が真ん中に表示されるようになります。</p>
+                </div>
+                <div class="item">
+                    <p class="title-18-700">サイズ16px, 行間200%(24px) 太さ400 (Regular)</p>
+                  <p class="description-16-200-400">ちらのテキストは、CSSで横幅を最大600pxに指定しています。横幅はmax-width: 600px;で指定しています。横幅が600pxよりも小さい場合、ブラウザがその幅に応じて文字を折り返してくれます。あとはmargin:0 auto;を使って、左右のマージンを自動にしてます。これで、記事が真ん中に表示されるようになります。</p>
+                </div>
+              </div>
+              
+    
+</body>
+</html>
